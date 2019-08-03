@@ -5,11 +5,11 @@ const DEFAULT_CUSTOM_MAPPING = {
   like: 'regex',
 };
 
-export const parseFilter = (
+export default function parseFilter(
   filter: any = {},
   sanitizedField: string[] = [],
   customMapping: any = {},
-) => {
+) {
   if (isEmpty(filter)) {
     return filter;
   }
@@ -51,4 +51,4 @@ export const parseFilter = (
     sanitiziedFilter[filterName] = changeKey;
   });
   return sanitiziedFilter;
-};
+}
