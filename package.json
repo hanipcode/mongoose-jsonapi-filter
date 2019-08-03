@@ -1,0 +1,35 @@
+{
+  "name": "mongoose-jsonapi-filter",
+  "version": "0.1.0",
+  "description": "easily using map json api filter in query string to mongoose schema",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanipcode/mongoose-jsonapi-filter.git"
+  },
+  "keywords": [
+    "mongoose",
+    "jsonapi",
+    "filter",
+    "mongoose",
+    "filter"
+  ],
+  "author": "Muhammad Hanif",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hanipcode/mongoose-jsonapi-filter/issues"
+  },
+  "homepage": "https://github.com/hanipcode/mongoose-jsonapi-filter#readme",
+  "devDependencies": {
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
