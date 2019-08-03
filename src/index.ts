@@ -5,13 +5,10 @@ const DEFAULT_CUSTOM_MAPPING = {
   like: 'regex',
 };
 
-const WILL_PARSED_TO_REGEX = ['like'];
-
 export const parseFilter = (
   filter: any = {},
   sanitizedField: string[] = [],
   customMapping: any = {},
-  transformToRegexMap: string[] = [],
 ) => {
   if (isEmpty(filter)) {
     return filter;
@@ -20,17 +17,20 @@ export const parseFilter = (
     ...DEFAULT_CUSTOM_MAPPING,
     ...customMapping,
   };
-  const regexMapping = [...WILL_PARSED_TO_REGEX, ...transformToRegexMap];
   const sanitiziedFilter = pickBy(
     filter,
     (_, key) => sanitizedField.indexOf(key) === -1,
+  );
+  const regexMapping = pickBy(
+    DEFAULT_CUSTOM_MAPPING,
+    (value) => value === 'regex',
   );
   const filterKey = Object.keys(sanitiziedFilter);
   filterKey.forEach((filterName) => {
     const parseJSON = mapValues(sanitiziedFilter[filterName], (value, key) => {
       try {
         let parsed;
-        if (regexMapping.indexOf(key) > -1) {
+        if (regexMapping[key]) {
           parsed = new RegExp(value, 'gmi');
         } else {
           parsed = JSON.parse(value);
