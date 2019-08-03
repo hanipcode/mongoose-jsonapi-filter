@@ -1,6 +1,6 @@
 {
   "name": "mongoose-jsonapi-filter",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "easily using map json api filter in query string to mongoose schema",
   "main": "./dist/index.js",
   "scripts": {
