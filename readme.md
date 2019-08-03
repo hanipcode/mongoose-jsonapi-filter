@@ -1,5 +1,11 @@
 # Mongoose JSON API Filter
 
+## Install
+
+run `npm i mongoose-jsonapi-filter --save`
+or
+`yarn add mongoose-jsonapi-filter`
+
 ## Basic Usage
 
 given we have url like this `api/user?filter[email][is]=foo@mail.com`
